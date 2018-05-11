@@ -513,6 +513,8 @@
                     </ul>
                 </div>
             </div>
+            <h1>{{ $haha }}</h1>
+            <h1>{{ $haha }}</h1>
             <div class="tab-pane page-quick-sidebar-settings" id="quick_sidebar_tab_3">
                 <div class="page-quick-sidebar-settings-list">
                     <h3 class="list-heading">General Settings</h3>

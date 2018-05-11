@@ -97,12 +97,7 @@
                 <form style="display: none" class="forget-form" method="POST" action="{{ route('password.email') }}">
                         <h3 class="font-green">Forgot Password ?</h3>
                     <p>
-
-                        @if ($errors->has('email'))
-                            {{ $errors->first('email') }}
-                        @else
-                            Enter your e-mail address below to reset your password.
-                        @endif
+                        Enter your e-mail address below to reset your password.
                     </p>
 
                     @csrf

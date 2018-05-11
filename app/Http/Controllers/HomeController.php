@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
     }
 
     /**
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+//        return view('home.index');
+        $data = DB::table('users')->paginate(1);
+        return view('test.index',['users'=>$data]);
+    }
+
+    public function getIndex(){
+
         return view('home.index');
+
     }
 }

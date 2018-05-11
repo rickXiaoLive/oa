@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        view()->composer('home.index',
+                \App\Http\ViewComposers\RecentPostsComposer::class
+            );
     }
 
     /**

@@ -1,4 +1,7 @@
 <?php
+use App\Model\User;
+use \Illuminate\Support\MessageBag;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +21,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/test', function (){
+    $msg = [
+        'mail'=>"mall 的消息",
+        'notice'=>"notice 的消息"
+    ];
+    $mesage = new MessageBag($msg);
+    return view('test.index',['user'=>DB::table('users')->paginate(1)])->withErrors($mesage);
+});
+
+
+Route::post('/file', function (Request $request){
+    dd($request->file('profile_picture'));
+})->name('fileTest');
