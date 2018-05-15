@@ -20,7 +20,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+
+    return view('home.index');
+})->name('home');
+
+Route::get('/home/test', function(){
+    return view('home.test');
+})->name('home.test');
+
+
+Route::resource('auth','Admin\AuthController');
+
+
 
 Route::get('/test', function (){
     $msg = [

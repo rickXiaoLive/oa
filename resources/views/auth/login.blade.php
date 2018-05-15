@@ -70,7 +70,7 @@
                     @endif
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" value="{{ old('email') }}"  name="email" required/> </div>
+                            <input class="form-control form-control-solid placeholder-no-fix form-group" type="email" autocomplete="off" placeholder="Email" value="{{ old('email') }}"  name="email" required/> </div>
                         <div class="col-xs-6">
                             <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
                     </div>
@@ -102,7 +102,7 @@
 
                     @csrf
                     <div class="form-group">
-                        <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" value="{{ $email ?? old('email') }}"  /> </div>
+                        <input class="form-control placeholder-no-fix form-group" type="email" autocomplete="off" placeholder="Email" name="email" value="{{ $email ?? old('email') }}"  /> </div>
                     <div class="form-actions">
                         <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
                         <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>

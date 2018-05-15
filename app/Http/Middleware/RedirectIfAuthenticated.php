@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
-
+        //这里判断是什么类型的用户进行跳转
         return $next($request);
     }
 }

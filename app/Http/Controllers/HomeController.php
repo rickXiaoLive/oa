@@ -18,17 +18,6 @@ class HomeController extends Controller
 
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-//        return view('home.index');
-        $data = DB::table('users')->paginate(1);
-        return view('test.index',['users'=>$data]);
-    }
 
     public function getIndex(){
 

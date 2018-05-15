@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ComposerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer(['layouts.*'],
+                \App\Http\ViewComposers\LeftMenuComposer::class
+            );
     }
 
     /**
